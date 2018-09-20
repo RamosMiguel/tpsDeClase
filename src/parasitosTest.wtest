@@ -1,0 +1,18 @@
+import Parasito.*
+import Persona.*
+
+describe""{
+	var morty=new Persona()
+	fixture{
+	
+		morty.corduraInicial(56)
+		
+		
+	}
+	
+	test "la cordura de morty se calcula bien" {
+
+	assert.that(true)
+
+	}
+}
