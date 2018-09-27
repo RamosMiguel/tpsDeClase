@@ -2,17 +2,66 @@ import Parasito.*
 import Persona.*
 
 describe""{
-	var morty=new Persona()
-	fixture{
 	
-		morty.corduraInicial(56)
+	const beth.accionDeLosParasitos()=new Persona()
+	const summer= new Persona()
+	const beth = new Persona()
+	const tioSteve =new  Parasito()
+	const nicky= new Parasito()
+	const frankestein=new Parasito()
+	
+	
+	fixture{
+		
+		summer.cordura(70)
+		beth.cordura(98)
+		morty.cordura(56)
+		
+		tioSteve.poder(1)
+		tioSteve.lastima(60)
+		nicky.poder(5)
+		nicky.lastima(70)
+		frankestein.lastima(40)
+		frankestein.poder(10)
+		
+		morty.infectarse(tioSteve)
+		morty.infectarse(nicky)
+		morty.accionDeLosParasitos()
 		
 		
 	}
 	
 	test "la cordura de morty se calcula bien" {
-
-	assert.that(true)
+		
+		
+		
+     	assert.equals(50,morty.cordura())
 
 	}
+	
+	test "la cordura de beth es 88"{
+		
+		beth.infectarse(frankestein)
+		beth.accionDeLosParasitos()
+		
+		assert.equals(88,beth.cordura())
+	}
+	
+	test "morty esta en contacto con summer"{
+		
+		morty.infectar(summer)
+		
+		assert.equals(1,summer.cantidadParasitos())
+		
+	}
+	
+	test "beth es infectada con el tioSteve"{
+		
+		morty.infectar(beth)
+		beth.accionDeLosParasitos()
+		assert.equals(86,beth.cordura())
+		
+		
+	}
+	
 }
